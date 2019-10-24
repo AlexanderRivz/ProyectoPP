@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ProyectoBuy4You</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_main_navigation">MainNavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="cantidad_articulos">Cantidad articulos: </string>
+    <string name="tot_compra">Total compra: </string>
+    <string name="total">Total: </string>
+    <string name="placeholder">placeholder</string>
+    <string name="empty_cart">No tienes ningun articulo en tu carrito</string>
+    <string name="button_comprar_prod">Agregar al carrito</string>
+
+    <string name="product_image_desc">Imagen Producto </string>
+    <string name="confirmar">Confirmar</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+</resources>
