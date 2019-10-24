@@ -19,15 +19,15 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.slideshow.SlideshowFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.profile.ProfileFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.tools.ToolsFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.settings.SettingsFragment"
         android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/nav_share"

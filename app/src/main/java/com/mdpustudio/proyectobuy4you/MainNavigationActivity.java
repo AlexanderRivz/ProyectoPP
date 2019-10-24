@@ -12,11 +12,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.mdpustudio.proyectobuy4you.fragments.productosproveedor.ProductosProveedorFragment;
 import com.mdpustudio.proyectobuy4you.fragments.shoppingcart.ShoppingCartFragment;
 import com.mdpustudio.proyectobuy4you.fragments.proveedores.ProveedorFragment;
-import com.mdpustudio.proyectobuy4you.fragments.slideshow.SlideshowFragment;
-import com.mdpustudio.proyectobuy4you.fragments.tools.ToolsFragment;
+import com.mdpustudio.proyectobuy4you.fragments.profile.ProfileFragment;
+import com.mdpustudio.proyectobuy4you.fragments.settings.SettingsFragment;
 import com.mdpustudio.proyectobuy4you.models.Usuario;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -61,12 +60,12 @@ public class MainNavigationActivity extends AppCompatActivity {
                                 return true;
                             case R.id.action_profile:
                                 // TODO
-                                Fragment profileFragment = new ToolsFragment();
+                                Fragment profileFragment = new ProfileFragment();
                                 doFragmentTransaction(profileFragment);
                                 return true;
                             case R.id.action_settings:
                                 // TODO
-                                Fragment settingsFragent = new SlideshowFragment();
+                                Fragment settingsFragent = new SettingsFragment();
                                 doFragmentTransaction(settingsFragent);
                                 return true;
                         }

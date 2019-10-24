@@ -1,16 +1,16 @@
-package com.mdpustudio.proyectobuy4you.fragments.slideshow;
+package com.mdpustudio.proyectobuy4you.fragments.settings;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class SettingsViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public SettingsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is profile fragment");
+        mText.setValue("This is settings fragment");
     }
 
     public LiveData<String> getText() {

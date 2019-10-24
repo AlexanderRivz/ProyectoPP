@@ -1,16 +1,16 @@
-package com.mdpustudio.proyectobuy4you.fragments.tools;
+package com.mdpustudio.proyectobuy4you.fragments.profile;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ToolsViewModel extends ViewModel {
+public class ProfileViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ToolsViewModel() {
+    public ProfileViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is settings fragment");
+        mText.setValue("This is profile fragment");
     }
 
     public LiveData<String> getText() {
