@@ -14,6 +14,23 @@
     <string name="placeholder">placeholder</string>
     <string name="empty_cart">No tienes ningun articulo en tu carrito</string>
     <string name="button_comprar_prod">Agregar al carrito</string>
+    <string name="username">Nombre de usuario:</string>
+    <string name="firstname">Nombres: </string>
+    <string name="lastname">Apellidos: </string>
+    <string name="buttonprofile">Modificar Datos</string>
+    <string name="vermas">Ver mas</string>
+    <string name="profile">Perfil</string>
+    <string name="email">Email: </string>
+    <string name="hintemail">Introduzca su Email</string>
+    <string name="hintfirtname">Ingrese sus nombres</string>
+    <string name="hintlastname">Ingrese sus apellidos</string>
+    <string name="hintusername">Ingrese su nuevo usuario</string>
+    <string name="hintpassword">Ingrese se nueva contraseña</string>
+    <string name="hintconfpassword">Confirme su nueva contraseña</string>
+    <string name="hintcurrentpass">Ingrese su contraseña actual</string>
+    <string name="currentpass">Contraseña actual: </string>
+    <string name="newpass">Nueva contraseña: </string>
+    <string name="confpass">Confirmar contraseña: </string>
 
     <string name="product_image_desc">Imagen Producto </string>
     <string name="confirmar">Confirmar</string>

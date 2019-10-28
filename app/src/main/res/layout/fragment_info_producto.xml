@@ -167,10 +167,10 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/roundobject"
+                        android:background="@drawable/ripple_effect"
                         android:text="@string/button_comprar_prod"
                         android:layout_gravity="start|center_horizontal"
-                        android:textColor="@color/colorPrimaryDark"/>
+                        android:textColor="@android:color/white"/>
 
                 </LinearLayout>
 

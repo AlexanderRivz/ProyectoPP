@@ -77,7 +77,7 @@ public class InfoProductoFragment extends Fragment {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 cantidad = Integer.parseInt(parentView.getItemAtPosition(position).toString());
                 valueProduct[0] = cantidad*selectedProduct.getPrecioBase();
-                precioTotal.setText(String.format("%.2f", valueProduct));
+                precioTotal.setText(String.format("%.2f", valueProduct[0]));
             }
 
             @Override

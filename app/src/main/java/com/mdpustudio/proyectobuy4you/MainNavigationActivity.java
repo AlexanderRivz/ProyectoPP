@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.mdpustudio.proyectobuy4you.fragments.modificardatosuser.ModificarDatosFragment;
 import com.mdpustudio.proyectobuy4you.fragments.shoppingcart.ShoppingCartFragment;
 import com.mdpustudio.proyectobuy4you.fragments.proveedores.ProveedorFragment;
 import com.mdpustudio.proyectobuy4you.fragments.profile.ProfileFragment;
@@ -60,7 +61,7 @@ public class MainNavigationActivity extends AppCompatActivity {
                                 return true;
                             case R.id.action_profile:
                                 // TODO
-                                Fragment profileFragment = new ProfileFragment();
+                                Fragment profileFragment = ProfileFragment.newInstance(loggedUser);
                                 doFragmentTransaction(profileFragment);
                                 return true;
                             case R.id.action_settings:

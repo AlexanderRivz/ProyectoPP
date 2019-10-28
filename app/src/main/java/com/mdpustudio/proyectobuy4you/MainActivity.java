@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void createData(){
 
-        users.add(new Usuario("Christian Alexander", "Rivera Rivas", "AlexanderRivz", "root", carritoCompras));
-        users.add(new Usuario("Test User", "Test User", "", "", carritoCompras));
+        users.add(new Usuario("Christian Alexander", "Rivera Rivas", "AlexanderRivz", "root", "00353514@uca.edu.sv" ,carritoCompras));
+        users.add(new Usuario("Test User", "Test User", "", "", "tesmail@mail.com" ,carritoCompras));
 
     }
 

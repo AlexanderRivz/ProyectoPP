@@ -9,15 +9,18 @@ public class Usuario implements Serializable {
     private String apellidoUsuario;
     private String username;
     private String password;
+    private String email;
     private ArrayList<CarritoCompra> carritoCompras;
 
-    public Usuario(String nombreUsuario, String apellidoUsuario, String username, String password, ArrayList<CarritoCompra> carritoCompras) {
+    public Usuario(String nombreUsuario, String apellidoUsuario, String username, String password, String email, ArrayList<CarritoCompra> carritoCompras) {
         this.setNombreUsuario(nombreUsuario);
         this.setApellidoUsuario(apellidoUsuario);
         this.setUsername(username);
         this.setPassword(password);
+        this.setEmail(email);
         this.setCarritoCompras(carritoCompras);
     }
+
 
 
     public String getNombreUsuario() {
@@ -58,5 +61,13 @@ public class Usuario implements Serializable {
 
     public void setCarritoCompras(ArrayList<CarritoCompra> carritoCompras) {
         this.carritoCompras = carritoCompras;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
