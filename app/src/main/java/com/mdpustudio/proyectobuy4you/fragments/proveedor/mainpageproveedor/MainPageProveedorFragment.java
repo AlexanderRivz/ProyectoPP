@@ -19,7 +19,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mdpustudio.proyectobuy4you.R;
+import com.mdpustudio.proyectobuy4you.fragments.proveedor.proveedoragregarproducto.ProveedorAgregarProductoFragment;
 import com.mdpustudio.proyectobuy4you.fragments.proveedor.proovedorinfoproduct.ProveedorInfoProductFragment;
 import com.mdpustudio.proyectobuy4you.models.Persona;
 import com.mdpustudio.proyectobuy4you.models.Producto;
@@ -59,6 +61,19 @@ public class MainPageProveedorFragment extends Fragment {
         TextView descripcion = root.findViewById(R.id.proveedordescripcion_textView);
         Button locacion = root.findViewById(R.id.proveedorverlocacion_button);
         RecyclerView recyclerView = root.findViewById(R.id.proveedorproductos_recyclerview);
+
+        FloatingActionButton fab = root.findViewById(R.id.newproduct);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment newproducto = ProveedorAgregarProductoFragment.newInstance(selectedPersona, selectedProveedor);
+                FragmentTransaction transaction = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out);
+                transaction.replace(R.id.nav_host_fragment, newproducto);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
 
         nombre.setText(selectedProveedor.getEmpresa());
         sucursal.setText(selectedProveedor.getSucursal());

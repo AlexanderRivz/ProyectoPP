@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Producto implements Serializable {
 
+    private int idproducto;
     private String nombreProducto;
     private String descripcion;
     //List<UnidadMedida> unidadMedida;
@@ -11,12 +12,16 @@ public class Producto implements Serializable {
     private Categoria categoriaProducto;
     private double precioBase;
 
-    public Producto(String nombreProducto, String descripcion, int cantidadInventario, Categoria categoriaProducto, double precioBase) {
+    public Producto(int idproducto, String nombreProducto, String descripcion, int cantidadInventario, Categoria categoriaProducto, double precioBase) {
+        this.idproducto = idproducto;
         this.nombreProducto = nombreProducto;
         this.descripcion = descripcion;
         this.cantidadInventario = cantidadInventario;
         this.categoriaProducto = categoriaProducto;
         this.precioBase = precioBase;
+    }
+
+    public Producto() {
     }
 
     public String getNombreProducto() {
@@ -58,5 +63,13 @@ public class Producto implements Serializable {
 
     public void setCantidadInventario(int cantidadInventario) {
         this.cantidadInventario = cantidadInventario;
+    }
+
+    public int getIdproducto() {
+        return idproducto;
+    }
+
+    public void setIdproducto(int idproducto) {
+        this.idproducto = idproducto;
     }
 }

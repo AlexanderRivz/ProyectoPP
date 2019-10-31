@@ -162,29 +162,29 @@ public class MainNavigationActivity extends AppCompatActivity {
         if (productos1 != null){
             productos1.clear();
         }
-        productos1.add(new Producto("Shampoo Head&Shoulders","Shampoo que te deja el cabello muy limpio", 20,Categoria.CuidadoPersonal,10.00));
-        productos1.add(new Producto("PanCakes don Ariel","PanCakes con un rico sabor a chocolate", 15,Categoria.Harinas, 5.00));
-        productos1.add(new Producto("Manzanas don Merino","Manzana roja traida directamente del huerto de don Merino",8 ,Categoria.FrutasyVerduras, 0.25));
-        productos1.add(new Producto("Aceite de Oliva don Josseh","Aceite de la mejor calidad", 7,Categoria.AceiteyPasta, 10.00));
-        productos1.add(new Producto("Huevos la Gallinita","Huevos de la mejor calidad.", 5,Categoria.HuevosyLacteos, 3.25));
+        productos1.add(new Producto(1,"Shampoo Head&Shoulders","Shampoo que te deja el cabello muy limpio", 20,Categoria.CuidadoPersonal,10.00));
+        productos1.add(new Producto(2,"PanCakes don Ariel","PanCakes con un rico sabor a chocolate", 15,Categoria.Harinas, 5.00));
+        productos1.add(new Producto(3,"Manzanas don Merino","Manzana roja traida directamente del huerto de don Merino",8 ,Categoria.FrutasyVerduras, 0.25));
+        productos1.add(new Producto(4,"Aceite de Oliva don Josseh","Aceite de la mejor calidad", 7,Categoria.AceiteyPasta, 10.00));
+        productos1.add(new Producto(5,"Huevos la Gallinita","Huevos de la mejor calidad.", 5,Categoria.HuevosyLacteos, 3.25));
 
         if (productos2 != null){
             productos2.clear();
         }
-        productos2.add(new Producto("Conserva de Coco \"Cocolito\"","Rica conserva de coco directamente de cocolito", 13,Categoria.Conservas,0.50));
-        productos2.add(new Producto("Semita \"La Mieluda\"", "Deliciosa semita, asi como le gusta a la gente, bien mieluda",14,Categoria.PanaderiayDulces,0.50));
-        productos2.add(new Producto("Carde de cerdo el Cerdito", "La mejor carde directa de los mejores cerdos", 20,Categoria.CarnesyEmbutidos, 1.00));
-        productos2.add(new Producto("Jugo de Sandia don Rodrigo","Jugo de Sandia de los campos de don Rodrigo", 15,Categoria.Bebidas, 2.50));
-        productos2.add(new Producto("Aperitivo de Chicharron \"El puerquito Feliz\"","El mas rico chicharron, que tiene ese saber peculiar de los cerditos felices",8,Categoria.Aperitivos,0.75));
+        productos2.add(new Producto(1,"Conserva de Coco \"Cocolito\"","Rica conserva de coco directamente de cocolito", 13,Categoria.Conservas,0.50));
+        productos2.add(new Producto(2,"Semita \"La Mieluda\"", "Deliciosa semita, asi como le gusta a la gente, bien mieluda",14,Categoria.PanaderiayDulces,0.50));
+        productos2.add(new Producto(3,"Carde de cerdo el Cerdito", "La mejor carde directa de los mejores cerdos", 20,Categoria.CarnesyEmbutidos, 1.00));
+        productos2.add(new Producto(4,"Jugo de Sandia don Rodrigo","Jugo de Sandia de los campos de don Rodrigo", 15,Categoria.Bebidas, 2.50));
+        productos2.add(new Producto(5,"Aperitivo de Chicharron \"El puerquito Feliz\"","El mas rico chicharron, que tiene ese saber peculiar de los cerditos felices",8,Categoria.Aperitivos,0.75));
 
         if (productos3 != null){
             productos3.clear();
         }
-        productos3.add(new Producto("Juguete de accion Ariel ChocoGamer", "El juguete de accion de tu streamer favorito Ariel ChocoGamer.", 5,Categoria.Infantil,15.00));
-        productos3.add(new Producto("Pollo Rostizado \"Don Roberto\"", "Rico pollo rostizado que seguro calmara tu hambre.", 13,Categoria.Preparados, 7.00));
-        productos3.add(new Producto("Detergente Ajax","Detergente Ajax, dejara tu ropa bien limpia", 2,Categoria.HogaryLimpieza, 5.00));
-        productos3.add(new Producto("Cereal de chocolate \"Ariel ChocoGamer\"","Rico cereal de chocolate de tu streamer favorito Ariel ChocoGamer.", 13,Categoria.Cereales, 5.00));
-        productos3.add(new Producto("Gaseosa sabor Toronja \"El Soplado\"","Gaseosa de toronja de tu marca favorita, \"El Soplado\"", 13,Categoria.Bebidas, 0.50));
+        productos3.add(new Producto(1,"Juguete de accion Ariel ChocoGamer", "El juguete de accion de tu streamer favorito Ariel ChocoGamer.", 5,Categoria.Infantil,15.00));
+        productos3.add(new Producto(2,"Pollo Rostizado \"Don Roberto\"", "Rico pollo rostizado que seguro calmara tu hambre.", 13,Categoria.Preparados, 7.00));
+        productos3.add(new Producto(3,"Detergente Ajax","Detergente Ajax, dejara tu ropa bien limpia", 2,Categoria.HogaryLimpieza, 5.00));
+        productos3.add(new Producto(4,"Cereal de chocolate \"Ariel ChocoGamer\"","Rico cereal de chocolate de tu streamer favorito Ariel ChocoGamer.", 13,Categoria.Cereales, 5.00));
+        productos3.add(new Producto(5,"Gaseosa sabor Toronja \"El Soplado\"","Gaseosa de toronja de tu marca favorita, \"El Soplado\"", 13,Categoria.Bebidas, 0.50));
 
         //info proveedores
         if (proveedorList != null){

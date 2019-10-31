@@ -1,4 +1,4 @@
-package com.mdpustudio.proyectobuy4you.fragments.proveedor;
+package com.mdpustudio.proyectobuy4you.fragments.proveedor.proveedormodificarprod;
 
 import androidx.lifecycle.ViewModel;
 

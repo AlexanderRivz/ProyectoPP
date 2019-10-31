@@ -34,7 +34,7 @@ public class ModificarDatosFragment extends Fragment {
     private ModificarDatosViewModel modificarDatosViewModel;
 
     private Usuario selectedUser;
-    Persona selectedPersona;
+    private Persona selectedPersona;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,

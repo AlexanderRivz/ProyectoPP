@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.google.android.material.snackbar.Snackbar;
 import com.mdpustudio.proyectobuy4you.R;
 import com.mdpustudio.proyectobuy4you.models.CarritoCompra;
+import com.mdpustudio.proyectobuy4you.models.Categoria;
 import com.mdpustudio.proyectobuy4you.models.Persona;
 import com.mdpustudio.proyectobuy4you.models.Producto;
 import com.mdpustudio.proyectobuy4you.models.Usuario;
@@ -66,6 +67,8 @@ public class InfoProductoFragment extends Fragment {
 
         final String[] cantidades = new String[]{"1","2","3","4","5","6","7","8","9","10"};
         String[] unidades = new String[]{"Unidad","Docena","Libra","Kilo",};
+
+
 
         ArrayAdapter<String> adapterCantidad = new ArrayAdapter<>(Objects.requireNonNull(getActivity()),android.R.layout.simple_spinner_dropdown_item,cantidades);
         ArrayAdapter<String> adapterUnidades = new ArrayAdapter<>(Objects.requireNonNull(getActivity()),android.R.layout.simple_spinner_dropdown_item,unidades);

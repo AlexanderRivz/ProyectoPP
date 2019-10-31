@@ -39,6 +39,12 @@
     <string name="ubicacion">Ver ubicación</string>
     <string name="precio">Precio: </string>
     <string name="productoeditar">Editar Producto</string>
+    <string name="productoborrar">Borrar Producto</string>
+    <string name="hintnombreprod">Nombre producto</string>
+    <string name="hintdescproducto">Descripcion Producto</string>
+    <string name="hintcantidadprod">Inventario</string>
+    <string name="hintprecioprod">Precio</string>
+    <string name="hintcategoriaprod">Categoria: </string>
 
     <string name="product_image_desc">Imagen Producto </string>
     <string name="confirmar">Confirmar</string>

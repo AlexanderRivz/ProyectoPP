@@ -59,7 +59,7 @@
                     android:layout_marginTop="10dp">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/nombreprodmod_layout"
+                        android:id="@+id/nombreprod_layout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/nombreprodmod_editext"
+                            android:id="@+id/nombreprod_editext"
                             android:layout_width="match_parent"
                             android:layout_height="53dp"
                             android:hint="@string/hintnombreprod"
@@ -93,7 +93,7 @@
                         android:textColor="@android:color/black"/>
 
                     <Spinner
-                        android:id="@+id/spinnercategoria_spinner"
+                        android:id="@+id/spinnercategorianew_spinner"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
@@ -110,7 +110,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/descprodmod_layout"
+                        android:id="@+id/descprod_layout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/descprodmod_edittext"
+                            android:id="@+id/descprod_edittext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -136,7 +136,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/cantprodmod_layout"
+                        android:id="@+id/cantprod_layout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -144,7 +144,7 @@
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/cantprodmod_edittext"
+                            android:id="@+id/cantprod_edittext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -162,7 +162,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/precioprodmod_layout"
+                        android:id="@+id/precioprod_layout"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -170,7 +170,7 @@
                         app:errorEnabled="true">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/precioprodmod_edittext"
+                            android:id="@+id/precioprod_edittext"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -183,7 +183,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/modificarDatosProducto_button"
+                    android:id="@+id/nuevoDatosProducto_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"

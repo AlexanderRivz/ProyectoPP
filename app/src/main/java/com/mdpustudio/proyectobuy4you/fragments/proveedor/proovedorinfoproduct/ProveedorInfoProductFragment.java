@@ -1,5 +1,6 @@
 package com.mdpustudio.proyectobuy4you.fragments.proveedor.proovedorinfoproduct;
 
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -16,9 +17,12 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mdpustudio.proyectobuy4you.R;
+import com.mdpustudio.proyectobuy4you.fragments.proveedor.proveedormodificarprod.ProveedorModificarProductoFragment;
 import com.mdpustudio.proyectobuy4you.models.Persona;
 import com.mdpustudio.proyectobuy4you.models.Producto;
 import com.mdpustudio.proyectobuy4you.models.Proveedor;
+
+import java.util.Objects;
 
 public class ProveedorInfoProductFragment extends Fragment {
 
@@ -49,13 +53,16 @@ public class ProveedorInfoProductFragment extends Fragment {
 
         TextView nombreProd = root.findViewById(R.id.proveedorpinfonombre_textview);
         TextView categoriaProd = root.findViewById(R.id.proveedorpinfocategoria_textview);
+        TextView idProducto = root.findViewById(R.id.proveedoridprod_textview);
         TextView descripcionProd = root.findViewById(R.id.proveedorpinfodescripcion_textview);
         TextView cantidadProd = root.findViewById(R.id.proveedorpinfocantidad_textview);
         TextView precioProd = root.findViewById(R.id.proveedorpinfoprecio_textview);
         Button editarProd = root.findViewById(R.id.editarproducto_button);
+        Button borrarProd = root.findViewById(R.id.eliminarproducto_button);
 
         nombreProd.setText(selectedProducto.getNombreProducto());
         categoriaProd.setText(selectedProducto.getCategoriaProducto().toString());
+        idProducto.setText(String.valueOf(selectedProducto.getIdproducto()));
         descripcionProd.setText(selectedProducto.getDescripcion());
         cantidadProd.setText(String.valueOf(selectedProducto.getCantidadInventario()));
         precioProd.setText(String.format("%.2f", selectedProducto.getPrecioBase()));
@@ -63,7 +70,20 @@ public class ProveedorInfoProductFragment extends Fragment {
         editarProd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "uffff prro " + selectedPersona.getUsername(), Snackbar.LENGTH_SHORT).show();
+                Fragment editarProd = ProveedorModificarProductoFragment.newInstance(selectedPersona, selectedProveedor, selectedProducto);
+                FragmentTransaction transaction = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out);
+                transaction.replace(R.id.nav_host_fragment, editarProd);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
+        borrarProd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectedProveedor.getProductosInventario().remove(selectedProducto.getIdproducto()-1);
+                Snackbar.make(view, "El producto ha sido eliminado satisfactoriamente", Snackbar.LENGTH_SHORT).show();
             }
         });
 
