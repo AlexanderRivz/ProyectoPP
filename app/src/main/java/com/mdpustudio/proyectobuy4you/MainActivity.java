@@ -4,26 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.mdpustudio.proyectobuy4you.models.CarritoCompra;
-import com.mdpustudio.proyectobuy4you.models.Usuario;
-
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.mdpustudio.proyectobuy4you.models.Persona;
+import com.mdpustudio.proyectobuy4you.models.TipoUsuario;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Usuario> users = new ArrayList<>();
-    ArrayList<CarritoCompra> carritoCompras = new ArrayList<>();
-    EditText username;
-    EditText password;
+    ArrayList<Persona> peronas = new ArrayList<>();
     Button loginButton;
 
     @Override
@@ -33,8 +30,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        username = findViewById(R.id.username_edittext);
-        password = findViewById(R.id.password_edittext);
+        final TextInputLayout usernameLayout = findViewById(R.id.loginusername_layout);
+        final TextInputEditText usernameEdit = findViewById(R.id.loginusername_edittext);
+
+        final TextInputLayout passwordLayout = findViewById(R.id.logincontrasena_layout);
+        final TextInputEditText passwordEdit = findViewById(R.id.logincontrasena_edittext);
         loginButton = findViewById(R.id.login_button);
 
         createData();
@@ -62,23 +62,44 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                for (int i=0; i<users.size(); i++){
-                    if (username.getText().toString().equals(users.get(i).getUsername())){
-                        Intent intent = new Intent(getApplicationContext(), MainNavigationActivity.class);
-                        intent.putExtra("loggedUser", users.get(i));
-                        startActivity(intent);
-                    }
-                }
-                Snackbar.make(view,"Los datos son incorrectos" ,Snackbar.LENGTH_LONG).show();
+                boolean flag = true;
+                boolean correct = false;
 
+                if(Objects.requireNonNull(usernameEdit.getText()).toString().isEmpty()){
+                    flag = false;
+                    usernameLayout.setError("Tiene que ingresar su usuario.");
+                }
+                if (Objects.requireNonNull(passwordEdit.getText()).toString().isEmpty()){
+                    flag = false;
+                    passwordLayout.setError("Tiene que ingresasr su contraseña.");
+                }
+
+                if (flag){
+                    for (int i=0; i<peronas.size(); i++){
+                        if (usernameEdit.getText().toString().equals(peronas.get(i).getUsername()) && passwordEdit.getText().toString().equals(peronas.get(i).getPassword())){
+                            correct = true;
+                            Intent intent = new Intent(getApplicationContext(), MainNavigationActivity.class);
+                            intent.putExtra("loggedUser", peronas.get(i));
+                            startActivity(intent);
+                        }
+                    }
+                    if (!correct){
+                        usernameLayout.setError("Credenciales incorrectas.");
+                        passwordLayout.setError("Credenciales incorrectas.");
+                    }
+
+                }
             }
         });
     }
 
     public void createData(){
 
-        users.add(new Usuario("Christian Alexander", "Rivera Rivas", "AlexanderRivz", "root", "00353514@uca.edu.sv" ,carritoCompras));
-        users.add(new Usuario("Test User", "Test User", "", "", "tesmail@mail.com" ,carritoCompras));
+        peronas.add(new Persona(1, "testuser", "root", TipoUsuario.Consumidor,"test@email.com"));
+        peronas.add(new Persona(2, "user", "root", TipoUsuario.Consumidor,"testuser@email.com"));
+        peronas.add(new Persona(3, "testprov", "root", TipoUsuario.Tienda,"testprov@email.com"));
+        peronas.add(new Persona(4, "proveedor", "root", TipoUsuario.Tienda,"testprov2@email.com"));
+        peronas.add(new Persona(5, "proveedor2", "root", TipoUsuario.Tienda,"testprov3@email.com"));
 
     }
 

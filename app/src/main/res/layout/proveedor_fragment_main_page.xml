@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.proveedor.mainpageproveedor.MainPageProveedorFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardCornerRadius="5dp"
+            android:elevation="10dp"
+            app:cardElevation="10dp"
+            android:id="@+id/producto_card_view">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/proveedornombre_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:text="@string/placeholder"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/black"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        app:cardCornerRadius="250dp"
+                        app:cardBackgroundColor="@android:color/black">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            app:cardCornerRadius="250dp"
+                            android:layout_gravity="center">
+
+                            <ImageView
+                                android:layout_width="90dp"
+                                android:layout_height="90dp"
+                                android:src="@mipmap/ic_launcher_round"
+                                android:scaleType="centerCrop"/>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:orientation="vertical"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp">
+
+                        <TextView
+                            android:id="@+id/proveedorsucursal_textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:text="@string/placeholder"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/id"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/proveedorid_textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:text="@string/placeholder"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/tel"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                android:id="@+id/proveedortelefono_textView"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:text="@string/placeholder"
+                                android:textSize="14sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/proveedordescripcion_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="@string/placeholder"
+                    android:layout_margin="4dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+
+                <Button
+                    android:id="@+id/proveedorverlocacion_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/ubicacion"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/proveedorproductos_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp" />
+
+    </LinearLayout>
+
+
+</FrameLayout>

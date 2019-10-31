@@ -5,23 +5,35 @@ import java.util.ArrayList;
 
 public class Usuario implements Serializable {
 
+    private int idusuario;
+    private int idpersona;
     private String nombreUsuario;
     private String apellidoUsuario;
-    private String username;
-    private String password;
-    private String email;
     private ArrayList<CarritoCompra> carritoCompras;
 
-    public Usuario(String nombreUsuario, String apellidoUsuario, String username, String password, String email, ArrayList<CarritoCompra> carritoCompras) {
-        this.setNombreUsuario(nombreUsuario);
-        this.setApellidoUsuario(apellidoUsuario);
-        this.setUsername(username);
-        this.setPassword(password);
-        this.setEmail(email);
-        this.setCarritoCompras(carritoCompras);
+    public Usuario(int idusuario, int idpersona, String nombreUsuario, String apellidoUsuario, ArrayList<CarritoCompra> carritoCompras) {
+        this.idusuario = idusuario;
+        this.idpersona = idpersona;
+        this.nombreUsuario = nombreUsuario;
+        this.apellidoUsuario = apellidoUsuario;
+        this.carritoCompras = carritoCompras;
     }
 
+    public int getIdusuario() {
+        return idusuario;
+    }
 
+    public void setIdusuario(int idusuario) {
+        this.idusuario = idusuario;
+    }
+
+    public int getIdpersona() {
+        return idpersona;
+    }
+
+    public void setIdpersona(int idpersona) {
+        this.idpersona = idpersona;
+    }
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -39,22 +51,6 @@ public class Usuario implements Serializable {
         this.apellidoUsuario = apellidoUsuario;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public ArrayList<CarritoCompra> getCarritoCompras() {
         return carritoCompras;
     }
@@ -63,11 +59,4 @@ public class Usuario implements Serializable {
         this.carritoCompras = carritoCompras;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

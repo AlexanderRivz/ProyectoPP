@@ -32,8 +32,7 @@
             android:background="@color/colorPrimary"
             app:labelVisibilityMode="selected"
             app:itemIconTint="@color/colorPrimaryDark"
-            app:itemTextColor="@android:color/white"
-            app:menu="@menu/main_botton_menu" />
+            app:itemTextColor="@android:color/white" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

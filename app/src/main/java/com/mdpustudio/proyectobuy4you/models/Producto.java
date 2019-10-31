@@ -7,12 +7,14 @@ public class Producto implements Serializable {
     private String nombreProducto;
     private String descripcion;
     //List<UnidadMedida> unidadMedida;
+    private int cantidadInventario;
     private Categoria categoriaProducto;
     private double precioBase;
 
-    public Producto(String nombreProducto, String descripcion, Categoria categoriaProducto, double precioBase) {
+    public Producto(String nombreProducto, String descripcion, int cantidadInventario, Categoria categoriaProducto, double precioBase) {
         this.nombreProducto = nombreProducto;
-        this.setDescripcion(descripcion);
+        this.descripcion = descripcion;
+        this.cantidadInventario = cantidadInventario;
         this.categoriaProducto = categoriaProducto;
         this.precioBase = precioBase;
     }
@@ -48,5 +50,13 @@ public class Producto implements Serializable {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getCantidadInventario() {
+        return cantidadInventario;
+    }
+
+    public void setCantidadInventario(int cantidadInventario) {
+        this.cantidadInventario = cantidadInventario;
     }
 }

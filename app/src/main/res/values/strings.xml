@@ -9,12 +9,14 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="cantidad_articulos">Cantidad articulos: </string>
+    <string name="cantidad">Cantidad: </string>
     <string name="tot_compra">Total compra: </string>
     <string name="total">Total: </string>
     <string name="placeholder">placeholder</string>
     <string name="empty_cart">No tienes ningun articulo en tu carrito</string>
     <string name="button_comprar_prod">Agregar al carrito</string>
-    <string name="username">Nombre de usuario:</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
     <string name="firstname">Nombres: </string>
     <string name="lastname">Apellidos: </string>
     <string name="buttonprofile">Modificar Datos</string>
@@ -31,6 +33,12 @@
     <string name="currentpass">Contraseña actual: </string>
     <string name="newpass">Nueva contraseña: </string>
     <string name="confpass">Confirmar contraseña: </string>
+    <string name="ver">Ver</string>
+    <string name="id">Id:</string>
+    <string name="tel">Tel:</string>
+    <string name="ubicacion">Ver ubicación</string>
+    <string name="precio">Precio: </string>
+    <string name="productoeditar">Editar Producto</string>
 
     <string name="product_image_desc">Imagen Producto </string>
     <string name="confirmar">Confirmar</string>

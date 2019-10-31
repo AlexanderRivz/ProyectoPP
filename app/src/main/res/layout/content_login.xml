@@ -27,43 +27,63 @@
             android:layout_margin="10dp"
             android:background="@drawable/roundobject">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:text="Username:"
-                android:textColor="@android:color/black"/>
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp">
 
-            <EditText
-                android:id="@+id/username_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:padding="4dp"
-                android:textColor="@android:color/black"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loginusername_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    app:errorEnabled="true">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:text="Password"
-                android:textColor="@android:color/black"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/loginusername_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:inputType="text"
+                        android:hint="@string/username" />
 
-            <EditText
-                android:id="@+id/password_edittext"
-                android:inputType="textPassword"
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                android:padding="4dp"
-                android:textColor="@android:color/black"/>
+                android:orientation="horizontal"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/logincontrasena_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    app:errorEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/logincontrasena_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:inputType="textPassword"
+                        android:hint="@string/password" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/login_button"
@@ -72,6 +92,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@android:color/white"
                 android:background="@drawable/ripple_effect"
                 android:text="Login"/>

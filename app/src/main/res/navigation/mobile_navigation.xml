@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.proveedores.ProveedorFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.consumidor.mainpageusuario.MainPageUsuarioFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_proveedor" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.shoppingcart.ShoppingCartFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.consumidor.shoppingcart.ShoppingCartFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_shopping_cart" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.profile.ProfileFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.consumidor.profile.ProfileFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.settings.SettingsFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.consumidor.settings.SettingsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_settings" />
 
@@ -37,7 +37,7 @@
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.mdpustudio.proyectobuy4you.fragments.modificardatosuser.ModificarDatosFragment"
+        android:name="com.mdpustudio.proyectobuy4you.fragments.consumidor.modificardatosuser.ModificarDatosFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_modificar_datos" />
 </navigation>

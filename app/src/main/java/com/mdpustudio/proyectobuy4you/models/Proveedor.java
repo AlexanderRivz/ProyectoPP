@@ -5,33 +5,53 @@ import java.util.ArrayList;
 
 public class Proveedor implements Serializable {
 
+    private int idproveedor;
+    private int idpersona;
     private String empresa;
     private String sucursal;
-    private String idUsuario;
-    private String descripcionUsuario;
+    private String descripcionProveedor;
     //private String Imagen;
     private ArrayList<Producto> productosInventario;
-    private TipoUsuario tipoUsuario;
     private String numeroTelefonico;
     private double longitud;
     private double latitud;
 
-
-    public Proveedor(String empresa, String sucursal, String idUsuario, String descripcionUsuario,/*String imagen, */ArrayList<Producto> productosInventario,
-                     TipoUsuario tipoUsuario, String numeroTelefonico, double longitud, double latitud){
-        this.setEmpresa(empresa);
-        this.setSucursal(sucursal);
-        this.setIdUsuario(idUsuario);
-        this.setDescripcionUsuario(descripcionUsuario);
-        //this.setImagen(imagen);
-        this.setProductosInventario(productosInventario);
-        this.setTipoUsuario(tipoUsuario);
-        this.setNumeroTelefonico(numeroTelefonico);
-        this.setLongitud(longitud);
-        this.setLatitud(latitud);
+    public Proveedor(int idproveedor, int idpersona, String empresa, String sucursal, String descripcionProveedor, ArrayList<Producto> productosInventario, String numeroTelefonico, double longitud, double latitud) {
+        this.idproveedor = idproveedor;
+        this.idpersona = idpersona;
+        this.empresa = empresa;
+        this.sucursal = sucursal;
+        this.descripcionProveedor = descripcionProveedor;
+        this.productosInventario = productosInventario;
+        this.numeroTelefonico = numeroTelefonico;
+        this.longitud = longitud;
+        this.latitud = latitud;
     }
 
 
+    public int getIdproveedor() {
+        return idproveedor;
+    }
+
+    public void setIdproveedor(int idproveedor) {
+        this.idproveedor = idproveedor;
+    }
+
+    public int getIdpersona() {
+        return idpersona;
+    }
+
+    public void setIdpersona(int idpersona) {
+        this.idpersona = idpersona;
+    }
+
+    public String getDescripcionProveedor() {
+        return descripcionProveedor;
+    }
+
+    public void setDescripcionProveedor(String descripcionProveedor) {
+        this.descripcionProveedor = descripcionProveedor;
+    }
 
     public String getEmpresa() {
         return empresa;
@@ -41,15 +61,6 @@ public class Proveedor implements Serializable {
         this.empresa = empresa;
     }
 
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-
     /*public String getImagen() {
         return Imagen;
     }
@@ -57,22 +68,6 @@ public class Proveedor implements Serializable {
     public void setImagen(String imagen) {
         Imagen = imagen;
     }*/
-
-    /*public List<Producto> getCarritoCompras() {
-        return carritoCompras;
-    }
-
-    public void setCarritoCompras(List<Producto> carritoCompras) {
-        this.carritoCompras = carritoCompras;
-    }*/
-
-    public TipoUsuario getTipoUsuario() {
-        return tipoUsuario;
-    }
-
-    public void setTipoUsuario(TipoUsuario tipoUsuario) {
-        this.tipoUsuario = tipoUsuario;
-    }
 
     public ArrayList<Producto> getProductosInventario() {
         return productosInventario;
@@ -96,14 +91,6 @@ public class Proveedor implements Serializable {
 
     public void setLatitud(double latitud) {
         this.latitud = latitud;
-    }
-
-    public String getDescripcionUsuario() {
-        return descripcionUsuario;
-    }
-
-    public void setDescripcionUsuario(String descripcionUsuario) {
-        this.descripcionUsuario = descripcionUsuario;
     }
 
     public String getNumeroTelefonico() {
