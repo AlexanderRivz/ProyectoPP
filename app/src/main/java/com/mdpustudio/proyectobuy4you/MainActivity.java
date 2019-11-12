@@ -100,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
         peronas.add(new Persona(3, "testprov", "root", TipoUsuario.Tienda,"testprov@email.com"));
         peronas.add(new Persona(4, "proveedor", "root", TipoUsuario.Tienda,"testprov2@email.com"));
         peronas.add(new Persona(5, "proveedor2", "root", TipoUsuario.Tienda,"testprov3@email.com"));
+        peronas.add(new Persona(6, "repartidor", "root", TipoUsuario.Repartidor,"repartidor@email.com"));
+        peronas.add(new Persona(7, "repartidor2", "root", TipoUsuario.Repartidor,"repartidor2@email.com"));
+        peronas.add(new Persona(8, "repartidor3", "root", TipoUsuario.Repartidor,"repartidor3@email.com"));
 
     }
 

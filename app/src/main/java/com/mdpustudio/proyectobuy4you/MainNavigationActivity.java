@@ -17,11 +17,14 @@ import com.mdpustudio.proyectobuy4you.fragments.consumidor.mainpageusuario.MainP
 import com.mdpustudio.proyectobuy4you.fragments.consumidor.profile.ProfileFragment;
 import com.mdpustudio.proyectobuy4you.fragments.consumidor.settings.SettingsFragment;
 import com.mdpustudio.proyectobuy4you.fragments.proveedor.mainpageproveedor.MainPageProveedorFragment;
+import com.mdpustudio.proyectobuy4you.fragments.repartidor.mainpagerepartidor.MainPageRepartidorFragment;
 import com.mdpustudio.proyectobuy4you.models.CarritoCompra;
 import com.mdpustudio.proyectobuy4you.models.Categoria;
 import com.mdpustudio.proyectobuy4you.models.Persona;
+import com.mdpustudio.proyectobuy4you.models.PeticionEntrega;
 import com.mdpustudio.proyectobuy4you.models.Producto;
 import com.mdpustudio.proyectobuy4you.models.Proveedor;
+import com.mdpustudio.proyectobuy4you.models.Repartidor;
 import com.mdpustudio.proyectobuy4you.models.TipoUsuario;
 import com.mdpustudio.proyectobuy4you.models.Usuario;
 
@@ -38,12 +41,20 @@ public class MainNavigationActivity extends AppCompatActivity {
     ActionBarDrawerToggle t;
     Persona loggedUser;
     Usuario infoUser;
+    Repartidor infoRepartidor;
     Proveedor infoProveedor;
     ArrayList<Usuario> userList = new ArrayList<>();
     ArrayList<Proveedor> proveedorList = new ArrayList<>();
     private ArrayList<Producto> productos1 = new ArrayList<>();
     private ArrayList<Producto> productos2 = new ArrayList<>();
     private ArrayList<Producto> productos3 = new ArrayList<>();
+    private ArrayList<Repartidor> repartidores = new ArrayList<>();
+    private ArrayList<CarritoCompra> rep1 = new ArrayList<>();
+    private ArrayList<CarritoCompra> rep2 = new ArrayList<>();
+    private ArrayList<CarritoCompra> rep3 = new ArrayList<>();
+    ArrayList<PeticionEntrega> ent1 = new ArrayList<>();
+    ArrayList<PeticionEntrega> ent2 = new ArrayList<>();
+    ArrayList<PeticionEntrega> ent3 = new ArrayList<>();
     ArrayList<CarritoCompra> carrito = new ArrayList<>();
 
     @Override
@@ -75,6 +86,14 @@ public class MainNavigationActivity extends AppCompatActivity {
             }
             Fragment homeFragmentProveedor = MainPageProveedorFragment.newInstance(loggedUser, infoProveedor);
             doFragmentTransaction(homeFragmentProveedor);
+        }else if (loggedUser.getTipoUsuario() == TipoUsuario.Repartidor){
+            for (int i=0;i<repartidores.size();i++){
+                if (repartidores.get(i).getIdPersona() == loggedUser.getIdpersona()){
+                    infoRepartidor = repartidores.get(i);
+                }
+            }
+            Fragment homeFragmentRepartidor = MainPageRepartidorFragment.newInstance(loggedUser, infoRepartidor);
+            doFragmentTransaction(homeFragmentRepartidor);
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -93,7 +112,7 @@ public class MainNavigationActivity extends AppCompatActivity {
                                     return true;
                                 case R.id.action_shopping_cart:
                                     // TODO
-                                    Fragment shoppingCart = ShoppingCartFragment.newInstance(infoUser);
+                                    Fragment shoppingCart = ShoppingCartFragment.newInstance(loggedUser, infoUser);
                                     doFragmentTransaction(shoppingCart);
                                     return true;
                                 case R.id.action_profile:
@@ -120,6 +139,32 @@ public class MainNavigationActivity extends AppCompatActivity {
                                 case R.id.action_home:
                                     // TODO
                                     Fragment homeFragment = MainPageProveedorFragment.newInstance(loggedUser, infoProveedor);
+                                    doFragmentTransaction(homeFragment);
+                                    return true;
+                                case R.id.action_profile:
+                                    // TODO
+                                    Fragment profileFragment = ProfileFragment.newInstance(loggedUser, infoUser);
+                                    doFragmentTransaction(profileFragment);
+                                    return true;
+                                case R.id.action_settings:
+                                    // TODO
+                                    Fragment settingsFragent = new SettingsFragment();
+                                    doFragmentTransaction(settingsFragent);
+                                    return true;
+                            }
+                            return false;
+                        }
+                    });
+        }else if (loggedUser.getTipoUsuario() == TipoUsuario.Repartidor){
+            bnv.inflateMenu(R.menu.main_botton_menu_prov);
+            bnv.setOnNavigationItemSelectedListener(
+                    new BottomNavigationView.OnNavigationItemSelectedListener() {
+                        @Override
+                        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                            switch (item.getItemId()) {
+                                case R.id.action_home:
+                                    // TODO
+                                    Fragment homeFragment = MainPageRepartidorFragment.newInstance(loggedUser, infoRepartidor);
                                     doFragmentTransaction(homeFragment);
                                     return true;
                                 case R.id.action_profile:
@@ -196,8 +241,53 @@ public class MainNavigationActivity extends AppCompatActivity {
 
 
         //usuarios consumidores
+        if (userList != null){
+            userList.clear();
+        }
         userList.add(new Usuario(1,1, "Christian Alexander", "Rivera Rivas", carrito));
         userList.add(new Usuario(2,2,"test nombre", "test apellido", carrito));
 
+        //usuarios reparditores
+        if (rep1 != null){
+            rep1.clear();
+        }
+        rep1.add(new CarritoCompra(productos3.get(1),2,productos3.get(1).getPrecioBase()*2));
+        rep1.add(new CarritoCompra(productos3.get(2),4,productos3.get(2).getPrecioBase()*4));
+        rep1.add(new CarritoCompra(productos3.get(3),5,productos3.get(3).getPrecioBase()*5));
+
+        if (rep2 != null){
+            rep2.clear();
+        }
+        rep2.add(new CarritoCompra(productos3.get(1),2,productos3.get(1).getPrecioBase()*2));
+        rep2.add(new CarritoCompra(productos3.get(2),3,productos3.get(2).getPrecioBase()*3));
+        rep2.add(new CarritoCompra(productos3.get(3),4,productos3.get(3).getPrecioBase()*4));
+
+        if (rep3 != null){
+            rep3.clear();
+        }
+        rep3.add(new CarritoCompra(productos3.get(1),2,productos3.get(1).getPrecioBase()*2));
+        rep3.add(new CarritoCompra(productos1.get(1),3,productos1.get(1).getPrecioBase()*3));
+        rep3.add(new CarritoCompra(productos2.get(1),4,productos2.get(1).getPrecioBase()*4));
+
+        if (ent1 != null){
+            ent1.clear();
+        }
+        ent1.add(new PeticionEntrega(1,1, "Josseh Blanco", rep1));
+        ent1.add(new PeticionEntrega(2,2,"Roberto Jose", rep2));
+        if (ent2 != null){
+            ent2.clear();
+        }
+        ent2.add(new PeticionEntrega(2,1,"Roberto Jose",rep2));
+        if (ent3 != null){
+            ent3.clear();
+        }
+        ent3.add(new PeticionEntrega(3,2,"Karla Esperanza", rep3));
+
+        if (repartidores != null){
+            repartidores.clear();
+        }
+        repartidores.add(new Repartidor(1,6,"Rogelio Jose", "Lopez Blanco", ent1, "5151-5151",true));
+        repartidores.add(new Repartidor(2,7,"Franco Manuel", "Canales Reyes", ent2, "2121-5151",true));
+        repartidores.add(new Repartidor(3,8,"Josseh Mario", "Blanco Amaya", ent3, "5453-5151",true));
     }
 }

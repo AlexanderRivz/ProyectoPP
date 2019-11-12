@@ -10,22 +10,28 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.mdpustudio.proyectobuy4you.R;
+import com.mdpustudio.proyectobuy4you.fragments.consumidor.elegirrepartidor.ElegirRepartidorFragment;
+import com.mdpustudio.proyectobuy4you.models.Persona;
 import com.mdpustudio.proyectobuy4you.models.Usuario;
+
+import java.util.Objects;
 
 public class ShoppingCartFragment extends Fragment {
 
     private ShoppingCartViewModel shoppingCartViewModel;
 
-    public static ShoppingCartFragment newInstance(Usuario user) {
+    public static ShoppingCartFragment newInstance(Persona persona, Usuario user) {
         ShoppingCartFragment fragment = new ShoppingCartFragment();
         Bundle bundle = new Bundle();
         bundle.putSerializable("selectedUser", user);
+        bundle.putSerializable("selectedPersona", persona);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -37,6 +43,7 @@ public class ShoppingCartFragment extends Fragment {
 
         assert getArguments() != null;
         final Usuario selectedUser = (Usuario) getArguments().getSerializable("selectedUser");
+        final Persona selectedPersonta = (Persona)getArguments().getSerializable("selectedPersona");
         TextView cantidadArticulos = root.findViewById(R.id.cantidadarticulos_textview);
         TextView totalCarrito = root.findViewById(R.id.totalcompra_textview);
         Button button = root.findViewById(R.id.confirmarcompra_button);
@@ -72,7 +79,12 @@ public class ShoppingCartFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Se confirmo la compra del carrito", Snackbar.LENGTH_SHORT).show();
+                Fragment confirmar = ElegirRepartidorFragment.newInstance(selectedPersonta, selectedUser);
+                FragmentTransaction transaction = Objects.requireNonNull(getActivity()).getSupportFragmentManager().beginTransaction();
+                transaction.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out);
+                transaction.replace(R.id.nav_host_fragment, confirmar);
+                transaction.addToBackStack(null);
+                transaction.commit();
             }
         });
 
